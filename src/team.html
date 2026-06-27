@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2R WarZone | Dominate the Battlefield🚀</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        *::selection { background: var(--primary); color: black; }
+
+        :root {
+            --primary: #ff4d00; /* Aggressive Orange */
+            --accent: #ff9500e8;
+            --cyber-blue: #00f2ff;
+            --bg: #0a0b0d;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Base Setup */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: white; overflow-x: hidden; width: 100%; }
+
+        /* Floating Background Icons */
+        #floating-icons { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; pointer-events: none; }
+        .floating-icon { position: absolute; opacity: 0.15; filter: drop-shadow(0 0 5px var(--accent)); animation: floatIcon infinite linear; }
+        @keyframes floatIcon {
+            from { transform: translateY(110vh) rotate(0deg); }
+            to { transform: translateY(-15vh) rotate(360deg); }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 6000; transition: var(--transition);
+            background: transparent;
+        }
+        nav.scrolled { padding: 15px 8%; background: rgba(10, 11, 13, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--primary); }
+
+        .logo { font-size: 1.4rem; font-weight: 900; letter-spacing: 1px; z-index: 6001; }
+        .glitch-text { color: var(--primary); text-shadow: 2px 2px var(--accent); }
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-item { color: white; text-decoration: none; margin: 0 15px; font-size: 0.85rem; font-weight: bold; transition: 0.3s; }
+        .nav-item:hover, .nav-item.active { color: var(--primary); }
+
+        /* Menu Toggle (FIXED CROSS ICON) */
+        .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 7000; }
+        .bar { width: 30px; height: 3px; background: white; transition: all 0.3s ease-in-out; border-radius: 5px; display: block; }
+        .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background: var(--primary); }
+        .menu-toggle.active .bar:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+        .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background: var(--primary); }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(10, 11, 13, 0.98); backdrop-filter: blur(25px);
+            display: flex; justify-content: center; align-items: center;
+            transition: 0.5s ease-in-out; z-index: 5000; transform: translateX(100%);
+        }
+        .mobile-overlay.active { transform: translateX(0); }
+        .mobile-nav-links { list-style: none; text-align: center; }
+        .mobile-item { font-size: 2rem; color: white; text-decoration: none; display: block; margin: 25px 0; font-weight: 900; }
+
+        .btn-shiny {
+            background: transparent; border: 1px solid var(--primary); color: white;
+            padding: 12px 35px; font-weight: bold; cursor: pointer; position: relative;
+            overflow: hidden; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            transition: var(--transition); letter-spacing: 1px; font-size: 0.85rem;
+        }
+        .btn-shiny:hover { background: var(--primary); box-shadow: 0 0 20px var(--primary); transform: scale(1.05); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; background: radial-gradient(circle, rgba(255, 77, 0, 0.15) 0%, rgba(0,0,0,1) 85%);
+            padding: 0 5%; position: relative; z-index: 10;
+        }
+        .hero h1 { font-size: clamp(2rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero p { max-width: 700px; margin: 0 auto 30px; opacity: 0.8; line-height: 1.6; font-size: clamp(0.9rem, 2vw, 1.1rem); }
+
+        /* --- Stats Section --- */
+        .stats-section { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; position: relative; z-index: 10; }
+        .stat-card { background: var(--card-bg); padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .stat-card:hover { border-color: var(--primary); background: rgba(255, 77, 0, 0.05); }
+        .stat-card h2 { font-size: 2.5rem; color: var(--primary); }
+        .stat-card p { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; opacity: 0.7; }
+
+        /* --- Elite Squad Section --- */
+        .team-section { padding: 100px 10%; position: relative; z-index: 10; background: #050507; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .sub-title { color: var(--accent); letter-spacing: 4px; font-weight: bold; font-size: 0.8rem; margin-bottom: 10px; display: block; }
+
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .member-card {
+            background: #000; border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 500px; position: relative; overflow: hidden; transition: var(--transition);
+        }
+        .member-img {
+            height: 100%; width: 100%; background-size: cover; background-position: center;
+            filter: grayscale(100%); transition: var(--transition); transform: scale(1);
+        }
+        .member-info {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.98) 70%);
+            text-align: center; transform: translateY(50px); transition: var(--transition);
+        }
+        .member-info h4 { font-size: 1.4rem; color: #fff; text-transform: uppercase; margin-bottom: 5px; }
+        .member-info p { color: var(--accent); font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
+        .team-socials { display: flex; justify-content: center; gap: 15px; opacity: 0; transform: translateY(20px); transition: 0.4s; }
+        .team-socials a { color: #fff; font-size: 1.1rem; transition: 0.3s; }
+        .team-socials a:hover { color: var(--primary); transform: translateY(-3px); }
+
+        .member-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(255, 77, 0, 0.2); }
+        .member-card:hover .member-img { filter: grayscale(0%); transform: scale(1.1); }
+        .member-card:hover .member-info { transform: translateY(0); }
+        .member-card:hover .team-socials { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+
+        /* --- Footer --- */
+        .main-footer { background: #000; position: relative; padding-top: 100px; z-index: 10; border-top: 2px solid var(--primary); overflow: hidden; }
+        .footer-wave { position: absolute; top: 0; left: 0; width: 100%; line-height: 0; }
+        .footer-wave svg { width: calc(100% + 1.3px); height: 50px; fill: #0a0b0d; }
+        .footer-container { padding: 60px 10% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .nav-links, .nav-actions .btn-shiny { display: none; }
+            .menu-toggle { display: flex; }
+            .hero h1 { font-size: 3rem; }
+            .hero-btns { flex-direction: column; gap: 15px; align-items: center; }
+            .hero-btns .btn-shiny { width: 280px; }
+        }
+    </style>
+</head>
+
+<body>
+<div id="floating-icons"></div>
+
+<nav id="navbar">
+    <div class="logo">A2R <span class="glitch-text">WarZone🚀</span></div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-item ">Home</a></li>
+        <li><a href="tournaments.html" class="nav-item">Tournaments</a></li>
+        <li><a href="leaderboard.html" class="nav-item">Leaderboard</a></li>
+        <li><a href="teams.html" class="nav-item active">Team</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-shiny hide-mobile">JOIN DISCORD</button>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-item">HOME</a></li>
+        <li><a href="tournaments.html" class="mobile-item">TOURNAMENTS</a></li>
+        <li><a href="leaderboard.html" class="mobile-item">LEADERBOARD</a></li>
+        <li><a href="teams.html" class="mobile-item">TEAM</a></li>
+        <li><button class="btn-shiny" style="margin-top: 20px;">JOIN DISCORD</button></li>
+    </ul>
+</div>
+
+<section class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+        <h1>DOMINATE THE <br><span class="glitch-text">BATTLEFIELD</span></h1>
+        <p>The premium destination for PUBG & Free Fire competitive play. Join high-stakes arenas, climb the global rankings, and forge your legacy among the elite.</p>
+        <div class="hero-btns">
+            <button class="btn-shiny">REGISTER NOW</button>
+            <button class="btn-shiny" style="border-color:white; background: transparent;">VIEW SCHEDULE</button>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="stat-card" data-aos="fade-up">
+        <h2>20+</h2>
+        <p>Tournaments Hosted</p>
+    </div>
+    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <h2>$10K+</h2>
+        <p>Prize Pool Distributed</p>
+    </div>
+    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <h2>8K+</h2>
+        <p>Active Warriors</p>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="section-header" data-aos="fade-down">
+        <span class="sub-title">MEET THE MASTERS</span>
+        <h2 style="font-size: clamp(2rem, 5vw, 3rem);">THE ELITE <span class="glitch-text">SQUAD</span></h2>
+    </div>
+    <div class="team-grid">
+        <div class="member-card" data-aos="fade-up">
+            <div class="member-img" style="background-image:url('images/team-member1.jpg');"></div>
+            <div class="member-info">
+                <h4>Rakesh Kumar</h4>
+                <p>Founder</p>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img" style="background-image: url('images/team-member2.jpg');"></div>
+            <div class="member-info">
+                <h4>Abhik Sharma</h4>
+                <p>Co-Founder</p>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img" style="background-image:url('images/team-member3.jpg');"></div>
+            <div class="member-info">
+                <h4>Rahul Kumar</h4>
+                <p>Director</p>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ 4TH CARD AB GRID KE ANDAR HAI -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img" style="background-image: url('https://i.pravatar.cc/400?img=1');"></div>
+            <div class="member-info">
+                <h4>Suryansh Tamrakar</h4>
+                <p>Backend Developer</p>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ✅ team-grid yahan close hota hai (sirf 1 baar) -->
+</section>
+
+<footer class="main-footer">
+    <div class="footer-wave"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120H321.39Z"></path></svg></div>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col" data-aos="fade-up">
+                <div class="logo">A2R <span class="glitch-text">WarZone🚀</span></div>
+                <p style="font-size:0.85rem; opacity:0.7; margin-top:15px; line-height: 1.6;">Dominating the digital battlefield since 2025. Pro-tier broadcasting and high-stakes tournament hosting for the global community.</p>
+                <div style="display:flex; gap:15px; margin-top:20px; font-size:1.5rem;">
+                    <i class="fab fa-discord"></i><i class="fab fa-instagram"></i><i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <div class="footer-col"><h4>QUICK LINKS</h4><ul style="list-style:none; opacity:0.7; font-size:0.9rem; line-height:2;"><li>Events</li><li>Leaderboard</li><li>Teams</li></ul></div>
+            <div class="footer-col"><h4>STATUS</h4><div style="display:inline-flex; align-items:center; border:1px solid var(--cyber-blue); padding:5px 15px; border-radius:20px; color:var(--cyber-blue); font-size:0.7rem;"><span style="height:8px; width:8px; background:#00ff00; border-radius:50%; margin-right:10px;"></span> Online</div></div>
+        </div>
+        <div style="text-align:center; margin-top:60px; opacity:0.4; font-size:0.75rem;">&copy; 2025 A2R WarZone🚀. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

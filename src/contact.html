@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2R WarZone | Contact</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dooyfg1pa/image/upload/v1767044966/nqxwu0ewg85mjlsr8zc7.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="floating-container" id="floating-icons"></div>
+
+<nav id="navbar">
+    <div class="logo">A2R <span class="glitch-text">WarZone🚀</span></div>
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-item">Home</a></li>
+        <li><a href="services.html" class="nav-item">Services</a></li>
+        <li><a href="tournaments.html" class="nav-item">Tournaments</a></li>
+        <li><a href="team.html" class="nav-item">Team</a></li>
+        <li><a href="contact.html" class="nav-item active">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <a href="contact.html" class="btn-shiny hide-mobile">
+            <span>JOIN DISCORD</span>
+            <div class="shimmer"></div>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-item">HOME</a></li>
+        <li><a href="services.html" class="mobile-item">SERVICES</a></li>
+        <li><a href="tournaments.html" class="mobile-item">TOURNAMENTS</a></li>
+        <li><a href="team.html" class="mobile-item">TEAM</a></li>
+        <li><a href="contact.html" class="mobile-item">CONTACT</a></li>
+        <li><a href="contact.html" class="btn-shiny"><span>JOIN DISCORD</span></a></li>
+    </ul>
+</div>
+
+<!-- Hero Section -->
+<section class="hero services-hero">
+    <div class="hero-content" data-aos="zoom-out-up">
+        <h1 class="responsive-h1">GET IN <br><span class="glitch-text">TOUCH</span></h1>
+        <p>Register your team and join the ultimate gaming experience</p>
+    </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <h3>Discord Server</h3>
+                <p>Join our community for updates and discussions</p>
+                <a href="#" class="contact-link">Join Now</a>
+            </div>
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Support</h3>
+                <p>Get help with tournaments and registration</p>
+                <a href="mailto:support@a2rwarzone.com" class="contact-link">support@a2rwarzone.com</a>
+            </div>
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone Support</h3>
+                <p>Direct contact for urgent matters</p>
+                <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Registration Form -->
+<section class="team-registration">
+    <div class="container">
+        <div class="registration-header" data-aos="fade-down">
+            <h2>REGISTER YOUR TEAM</h2>
+            <p>Join the battlefield and compete for glory</p>
+        </div>
+
+        <form class="registration-form" data-aos="fade-up">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Team Name</label>
+                    <input type="text" name="teamName" required>
+                </div>
+                <div class="form-group">
+                    <label>Game</label>
+                    <select name="game" required>
+                        <option value="">Select Game</option>
+                        <option value="pubg">PUBG Mobile</option>
+                        <option value="freefire">Free Fire</option>
+                        <option value="bgmi">BGMI</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Captain Name</label>
+                    <input type="text" name="captainName" required>
+                </div>
+                <div class="form-group">
+                    <label>Captain ID</label>
+                    <input type="text" name="captainId" required>
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="members-section">
+                <h3>Team Members</h3>
+                <div class="member-inputs">
+                    <div class="member-row">
+                        <input type="text" name="member1" placeholder="Member 1 Name" required>
+                        <input type="text" name="member1Id" placeholder="Game ID" required>
+                    </div>
+                    <div class="member-row">
+                        <input type="text" name="member2" placeholder="Member 2 Name" required>
+                        <input type="text" name="member2Id" placeholder="Game ID" required>
+                    </div>
+                    <div class="member-row">
+                        <input type="text" name="member3" placeholder="Member 3 Name" required>
+                        <input type="text" name="member3Id" placeholder="Game ID" required>
+                    </div>
+                    <div class="member-row">
+                        <input type="text" name="member4" placeholder="Member 4 Name" required>
+                        <input type="text" name="member4Id" placeholder="Game ID" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-shiny"><span>REGISTER TEAM</span></button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard | A2R WarZone🚀</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dooyfg1pa/image/upload/v1767044966/nqxwu0ewg85mjlsr8zc7.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="floating-container" id="floating-icons"></div>
+
+<nav id="navbar">
+    <div class="logo">A2R <span class="glitch-text">WarZone🚀</span></div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-item">Home</a></li>
+        <li><a href="tournaments.html" class="nav-item">Tournaments</a></li>
+        <li><a href="leaderboard.html" class="nav-item active">Leaderboard</a></li>
+        <li><a href="team.html" class="nav-item">Team</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-shiny hide-mobile"><span>JOIN DISCORD</span></button>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-item">HOME</a></li>
+        <li><a href="tournaments.html" class="mobile-item">TOURNAMENTS</a></li>
+        <li><a href="leaderboard.html" class="mobile-item">LEADERBOARD</a></li>
+        <li><a href="team.html" class="mobile-item">TEAM</a></li>
+        <li><button class="btn-shiny" style="margin-top:20px;"><span>JOIN DISCORD</span></button></li>
+    </ul>
+</div>
+
+<header class="leaderboard-header" id="leaderboard-hero">
+    <div class="card">
+        <span class="sub-title" data-aos="fade-down">GLOBAL RANKINGS</span>
+        <h1 data-aos="zoom-in">TOP <span class="glitch-text">RANKERS</span></h1>
+
+        <div class="podium-container">
+            <div class="podium-card p-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="rank-icon" style="color: var(--silver);"><i class="fas fa-medal"></i></div>
+                <div class="avatar" style="background-image: url('https://i.pravatar.cc/150?u=22');"></div>
+                <h3>Rakesh_A2R</h3>
+                <p class="points">12,450 XP</p>
+                <small style="color: var(--accent);">WIN RATE: 74%</small>
+            </div>
+
+            <div class="podium-card p-1" data-aos="fade-up">
+                <div class="rank-icon" style="color: var(--gold);"><i class="fas fa-crown"></i></div>
+                <div class="avatar" style="background-image: url('https://i.pravatar.cc/150?u=11');"></div>
+                <h3>Abhik_Elite</h3>
+                <p class="points">15,800 XP</p>
+                <small style="color: var(--accent);">WIN RATE: 89%</small>
+            </div>
+
+            <div class="podium-card p-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="rank-icon" style="color: var(--bronze);"><i class="fas fa-award"></i></div>
+                <div class="avatar" style="background-image: url('https://i.pravatar.cc/150?u=33');"></div>
+                <h3>Rahul_War</h3>
+                <p class="points">10,200 XP</p>
+                <small style="color: var(--accent);">WIN RATE: 62%</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="table-section">
+    <div class="search-container">
+        <h2 data-aos="fade-right">HALL OF FAME</h2>
+        <input type="text" class="search-bar" placeholder="Search soldier name...">
+    </div>
+
+    <div class="card">
+        <table class="leaderboard-table" data-aos="fade-up">
+            <thead>
+            <tr><th>RANK</th><th>OPERATOR</th><th>EXPERIENCE</th><th>KILLS</th></tr>
+            </thead>
+            <tbody>
+            <tr><td>#08</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=8" class="player-avatar-small"><span>Thunder_Bolt</span></div></td><td class="points">5,800</td><td>650</td></tr>
+            <tr><td>#09</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=9" class="player-avatar-small"><span>Ice_Wolf</span></div></td><td class="points">4,900</td><td>580</td></tr>
+            <tr><td>#10</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=10" class="player-avatar-small"><span>Blaze_Fury</span></div></td><td class="points">4,200</td><td>490</td></tr>
+            <tr><td>#11</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=11" class="player-avatar-small"><span>Storm_Breaker</span></div></td><td class="points">3,600</td><td>420</td></tr>
+            <tr><td>#12</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=12" class="player-avatar-small"><span>Night_Hawk</span></div></td><td class="points">3,100</td><td>380</td></tr>
+            <tr><td>#13</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=13" class="player-avatar-small"><span>Dragon_Slayer</span></div></td><td class="points">2,500</td><td>320</td></tr>
+            <tr><td>#14</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=14" class="player-avatar-small"><span>Steel_Titan</span></div></td><td class="points">1,900</td><td>250</td></tr>
+            <tr><td>#15</td><td><div class="player-info"><img src="https://i.pravatar.cc/150?u=15" class="player-avatar-small"><span>Cyber_Warrior</span></div></td><td class="points">1,400</td><td>180</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-wave"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120H321.39Z"></path></svg></div>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col" data-aos="fade-up">
+                <div class="logo">A2R <span class="glitch-text">WarZone🚀</span></div>
+                <p class="footer-desc">Dominating the digital battlefield since 2025. We provide elite tournament hosting and pro-tier broadcasting.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h4>LINKS</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Elite Squad</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h4>OUR WORK</h4>
+                <ul class="footer-links">
+                    <li><a href="tournaments.html">Active Events</a></li>
+                    <li><a href="leaderboard.html">Hall of Fame</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h4>GET IN TOUCH</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@a2rwarzone.com</p>
+                    <div class="status-indicator"><span class="dot"></span> Servers Online</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 A2R WarZone🚀. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
