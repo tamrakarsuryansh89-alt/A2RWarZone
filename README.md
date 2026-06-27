@@ -14,4 +14,4 @@ built for PUBG Mobile and Free Fire players.
 - Responsive Design (Mobile Friendly)
 
 ## Live Demo
-[Visit A2R WarZone](https://tamrakarsuryansh89-alt.github.io/A2RWarZone)
+[Visit A2R WarZone](https://tamrakarsuryansh89-alt.github.io/A2RWarZone/src/index.html)
